@@ -4,12 +4,12 @@ export const Wrapper = styled.div``;
 
 export const Header = styled.header`
   background-color: #fff;
-  height: 2rem;
-  line-height: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
+  margin: 0.2rem 0;
   color: #666;
+  text-align: center;
 `;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext } from 'react';
 import axios from 'axios';
-import { Wrapper, Header, AddUserBtn } from './Styled';
+import { Wrapper, Header, AddUserBtn, HeaderItem } from './Styled';
 import Table from '../Table';
 import AddUserModal from '../AddUserModal';
 
@@ -74,6 +74,7 @@ export default function Main() {
         break;
       }
       case SORT_KEYS.ASC_NAME: {
+        // https://stackoverflow.com/questions/51165/how-to-sort-strings-in-javascript
         newData = newData.sort((a, b) => ('' + a.name).localeCompare(b.name));
         break;
       }
@@ -102,7 +103,7 @@ export default function Main() {
     >
       <Wrapper>
         <Header>
-          <div>
+          <HeaderItem>
             <label>Filter by:</label>
             <input
               type='text'
@@ -110,8 +111,8 @@ export default function Main() {
               value={filterKey}
               onChange={(e) => handleFilterKeyChange(e.target.value)}
             />
-          </div>
-          <div>
+          </HeaderItem>
+          <HeaderItem>
             <label>Sort by:</label>
             <select
               value={sortKey}
@@ -121,8 +122,10 @@ export default function Main() {
               <option value={SORT_KEYS.DESC_ID}>ID (descending order)</option>
               <option value={SORT_KEYS.ASC_NAME}>Name (a - z)</option>
             </select>
-          </div>
-          <AddUserBtn onClick={handleOpenModal}>addUser</AddUserBtn>
+          </HeaderItem>
+          <HeaderItem>
+            <AddUserBtn onClick={handleOpenModal}>addUser</AddUserBtn>
+          </HeaderItem>
         </Header>
         <Table />
         <AddUserModal />

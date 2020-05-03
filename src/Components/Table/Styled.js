@@ -36,17 +36,21 @@ export const BodyTr = styled.div`
 
 export const Th = styled.div`
   flex: ${(props) => props.flex || '1'};
+  min-width: 1rem;
 `;
 
 export const Td = styled.div`
   flex: ${(props) => props.flex || '1'};
   text-align: ${(props) => props.align || 'center'};
+  min-width: 1rem;
+  word-break: break-all;
 `;
 
 export const DeleteBtn = styled.button`
   ${ButtonStyle};
   background: #ff0000;
   color: #fff;
+  overflow: hidden;
   &:active {
     background: #cc0000;
   }

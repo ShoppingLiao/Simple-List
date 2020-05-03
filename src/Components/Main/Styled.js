@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
 
 export const Header = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin: 0.5rem 0;
   justify-content: space-between;
@@ -25,6 +26,10 @@ export const Header = styled.div`
     height: 1rem;
     line-height: 1rem;
   }
+`;
+
+export const HeaderItem = styled.div`
+  margin: 0.2rem 0;
 `;
 
 export const AddUserBtn = styled.button`
